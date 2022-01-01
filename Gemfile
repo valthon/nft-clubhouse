@@ -71,4 +71,9 @@ group :test do
   gem "webdrivers"
 end
 
-gem "nft_checker", "~> 0.1.0"
+gem "nft_checker", "~> 0.3"
+
+gem "omniauth", "~> 2.0"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "omniauth-nft", "~> 0.1"

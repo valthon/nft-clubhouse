@@ -1,0 +1,30 @@
+<div class="container">
+<div class="text-center font-xl font-mono bg-amber-200 p-10 h-48 border-8 border-emerald-300">
+  <span class="font-bold">Super</span>
+  <span class="overline text-sky-400">cool</span>
+  <span class="underline decoration-pink-500">private</span>
+  <span class="font-serif text-green-800">dashboard!</span>
+
+  Look at all the members:
+  <ul class="flex flex-row">
+    <% @users.each do |user| %>
+      <div class="flex justify-center flex-col-reverse items-center m-5">
+      <% if session[:user_id] == user.id %>
+       ^^^ You! ^^^
+        <% end %>
+      <% if user.profile_url.present? %>
+        <%= image_tag user.profile_url, title: user.name, alt: user.uid, class: 'max-w-16 max-h-16' %>
+      <% else %>
+        <span class="text-slate-400 border-4 border-radius-2 bg-red-200"><%=user.uid %></span>
+      <% end %>
+      </div>
+
+    <% end %>
+  </ul>
+  <div class="clear-both"></div>
+</div>
+
+<div class="mt-28 text-right">
+  <%=  link_to 'Sign Out', '/signout', class: "underline text-blue-800" %>
+</div>
+</div>
